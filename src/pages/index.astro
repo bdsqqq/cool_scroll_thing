@@ -1,4 +1,6 @@
 ---
+const lorem = "Lorem, ipsum dolor sit amet consectetur."
+const arr = new Array(10).fill(lorem)
 ---
 
 <html lang="en">
@@ -8,7 +10,20 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-zinc-900 text-zinc-200">
+		<div class="snap-y snap-mandatory overflow-y-auto h-screen ">
+			{arr.map((item) => (
+				<section class='h-[50vh] snap-start odd:bg-amber-200 odd:text-zinc-800 even:bg-zinc-900 even:text-amber-100'>
+					<div class="flex flex-col h-full justify-center items-center p-8">
+						<h2 class="text-5xl">{item}</h2>
+					</div>
+				</section>
+			))}
+			<footer>
+				<div class="p-8">
+					<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, cupiditate.</h1>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
